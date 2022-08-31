@@ -3,8 +3,8 @@
 // 4 -> да
 // -3 -> нет
 // 7 -> нет
-int volum = Prompt("Введите первое число > ");
-isEven();
+int volum = Prompt("Введите первое число > "); 
+ isEven();
 void isEven()
 {
     Console.Write($"{volum} ->");
