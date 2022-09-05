@@ -5,10 +5,10 @@ int[] numbers = new int[5];
 System.Console.WriteLine(numbers.Sum());
 System.Console.WriteLine(numbers.Average());
 
-for (int i = 0; i< numbers.Lengh; i++)
-{
-numbers[i] = Prompt($"Введит {i}-ое число > ");
-}
+// for (int i = 0; i< numbers.Lengh; i++)
+// {
+// numbers[i] = Prompt($"Введит {i}-ое число > ");
+// }
 
 int Prompt(string messege) 
 {
