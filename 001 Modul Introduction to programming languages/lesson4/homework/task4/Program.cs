@@ -55,7 +55,8 @@ void TestStart()
     System.Console.WriteLine("Test run:");
     foreach (var item in testArrayList.Zip(expectedAnsuer, Tuple.Create))
     {
-        System.Console.Write($" Test: {FindSecondMax(item.Item1)} Expected: {item.Item2}");
+        System.Console.Write($" Test: {FindSecondMax(item.Item1)} Expected: {item.Item2} for: ");
+        Array.ForEach(item.Item1, Console.Write);
         System.Console.WriteLine();
     }
 }
@@ -77,7 +78,7 @@ void MainStart()
     System.Console.WriteLine("Main run:");
     CreateArray(array);
     int secondMax = FindSecondMax(array);
-    PrintArray(array,"[","]");
+    PrintArray(array, "[", "]");
     System.Console.Write($" -> {secondMax}");
 }
 
