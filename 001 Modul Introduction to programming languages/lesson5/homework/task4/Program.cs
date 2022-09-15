@@ -31,7 +31,6 @@ int isZeroElements(int[] array)
 
 int[] GenerateArray(int length, int minRandom, int maxRandom)
 {
-
     Random rndNum = new Random();
     Random rndItem = new Random();
     int[] answer = new int[length];

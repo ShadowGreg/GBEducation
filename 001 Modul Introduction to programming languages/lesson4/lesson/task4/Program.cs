@@ -26,12 +26,12 @@ void PrintArray(int[] fillArray)
     System.Console.Write("]");
 }
 
-void FindSecondMax(int[] inArray)
-{
-    var max = Math.Max(inArray);
-    System.Console.WriteLine($"{max}");
-}
+// void FindSecondMax(int[] inArray)
+// {
+//     var max = Math.Max(inArray);
+//     System.Console.WriteLine($"{max}");
+// }
 
 PrintArray(CreateArray(array));
 System.Console.WriteLine();
-FindSecondMax(CreateArray(array));
+// FindSecondMax(CreateArray(array));

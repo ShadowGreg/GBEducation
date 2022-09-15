@@ -51,11 +51,10 @@ void TestStart()
     expectedAnsuer.Add(1);
     expectedAnsuer.Add(7);
     expectedAnsuer.Add(7);
-    Console.Clear();
     System.Console.WriteLine("Test run:");
     foreach (var item in testArrayList.Zip(expectedAnsuer, Tuple.Create))
     {
-        System.Console.Write($" Test: {FindSecondMax(item.Item1)} Expected: {item.Item2} for: ");
+        System.Console.Write($" Test: {FindSecondMax(item.Item1)} Expected: {item.Item2} for array: ");
         Array.ForEach(item.Item1, Console.Write);
         System.Console.WriteLine();
     }
