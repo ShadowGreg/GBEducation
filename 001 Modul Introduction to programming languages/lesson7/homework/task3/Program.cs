@@ -7,7 +7,7 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange)
+int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange) // Generation of matrix.
 {
     var array = new int[rowLength, colLength];
     var random = new Random();
@@ -21,7 +21,8 @@ int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange)
     }
     return array;
 }
-void PrintMatrix(int[,] array)
+
+void PrintMatrix(int[,] array) // Print matrix.
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -34,16 +35,17 @@ void PrintMatrix(int[,] array)
     System.Console.WriteLine();
 }
 
-int[] ReturnColum(int[,] insertMatrix, int columIndex)
+int[] ReturnColumn(int[,] insertMatrix, int columnIndex) // Column!
 {
-    int[] colum = new int[insertMatrix.GetLength(0)];
+    int[] column = new int[insertMatrix.GetLength(0)];
     for (int i = 0; i < insertMatrix.GetLength(0); i++)
     {
-        colum[i] = insertMatrix[i, columIndex];
+        column[i] = insertMatrix[i, columnIndex];
     }
-    return colum;
+    return column;
 }
-double FindArithmeticMean(int[] inputArray)
+
+double FindArithmeticMean(int[] inputArray) // Calculation of arithmetic mean.
 {
     double sum = 0;
     foreach (var t in inputArray)
@@ -53,9 +55,9 @@ double FindArithmeticMean(int[] inputArray)
     return sum / inputArray.Length;
 }
 
-int[,] newMatrix = GenerateMatrix(4, 3, 1, 10);
+int[,] newMatrix = GenerateMatrix(5, 5, -10, 10); // MAGIC numbers. Why not to input them? And there is no check for elements.
 PrintMatrix(newMatrix);
 for (int i = 0; i < newMatrix.GetLength(1); i++)
 {
-    System.Console.Write($"{FindArithmeticMean(ReturnColum(newMatrix,i)):f1}\t");
+    System.Console.Write($"{FindArithmeticMean(ReturnColumn(newMatrix, i)):f1}\t");
 }
