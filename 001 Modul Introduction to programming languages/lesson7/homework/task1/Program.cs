@@ -8,8 +8,8 @@
 
 // 8 7,8 -7,1 9
 
-double[,] GenerateMatrix(
-    int rowLength, int colLength, double minRange, double maxRange)
+double[,] GenerateMatrix // Matrix generation.
+(int rowLength, int colLength, double minRange, double maxRange)
 {
     var array = new double[rowLength, colLength];
     var random = new Random();
@@ -17,12 +17,13 @@ double[,] GenerateMatrix(
     {
         for (var j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = random.NextDouble()* (maxRange - minRange) + minRange;
+            array[i, j] = random.NextDouble() * (maxRange - minRange) + minRange;
         }
     }
     return array;
 }
-void PrintArray(double[,] array)
+
+void PrintArray(double[,] array) // Print matrix.
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -34,4 +35,6 @@ void PrintArray(double[,] array)
     }
     System.Console.WriteLine();
 }
-PrintArray(GenerateMatrix(3,4,-10,10));
+
+PrintArray(GenerateMatrix(3, 4, -10, 10)); // MAGIC NUMBERS!
+                                           // Maybe do a user input? Or constants.

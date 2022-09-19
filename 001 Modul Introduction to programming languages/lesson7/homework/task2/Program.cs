@@ -9,9 +9,10 @@
 // 8 4 2 4
 
 // 1, 7 -> такого числа в массиве нет
-int Prompt(string messege)
+
+int Prompt(string massage) // Массаж? Ахахах! "massage"! Input of values.
 {
-    Console.Write(messege);
+    Console.Write(massage);
     string strValue = Console.ReadLine() ?? "0";
     bool isNumber = int.TryParse(strValue, out int value);
     if (isNumber && value > 0)
@@ -20,7 +21,8 @@ int Prompt(string messege)
     }
     throw new Exception("Данное значение не возможно преобразовать в колонки либо строки");
 }
-int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange)
+
+int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange) // Generation of matrix.
 {
     var array = new int[rowLength, colLength];
     var random = new Random();
@@ -34,18 +36,20 @@ int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange)
     }
     return array;
 }
-void FindItem(int[,] inputMatrix, int rows, int colums)
+
+void FindItem(int[,] inputMatrix, int rows, int columns) // "columns" Find element in matrix.
 {
-    if (rows-1 > inputMatrix.GetLongLength(0) | colums-1 > inputMatrix.GetLongLength(1))
+    if (rows - 1 > inputMatrix.GetLongLength(0) | columns - 1 > inputMatrix.GetLongLength(1))
     {
         System.Console.WriteLine("такого числа в массиве нет");
     }
     else
     {
-        System.Console.WriteLine($" искомое число: {inputMatrix[rows-1, colums-1]}");
+        System.Console.WriteLine($" искомое число: {inputMatrix[rows - 1, columns - 1]}");
     }
 }
-void PrintArray(int[,] array)
+
+void PrintArray(int[,] array) // Prints a matrix.
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -61,5 +65,6 @@ void PrintArray(int[,] array)
 int[,] newMatrix = GenerateMatrix(4, 5, -10, 10);
 PrintArray(newMatrix);
 int inputRows = Prompt("Введите строку искомого элемента > ");
-int inputColums = Prompt("Введите колоноку искомого элемента > ");
-FindItem(newMatrix, inputRows, inputColums);
+int inputColumns = Prompt("Введите колонку искомого элемента > "); // "колонку"!
+FindItem(newMatrix, inputRows, inputColumns); // "Columns"!
+// https://qna.habr.com/q/630783 spelling check, i think a must have.
