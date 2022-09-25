@@ -9,9 +9,9 @@
 // 8 4 2 4
 
 // 1, 7 -> такого числа в массиве нет
-int Prompt(string messege)
+int Prompt(string message)
 {
-    Console.Write(messege);
+    Console.Write(message);
     string strValue = Console.ReadLine() ?? "0";
     bool isNumber = int.TryParse(strValue, out int value);
     if (isNumber && value > 0)
@@ -34,15 +34,15 @@ int[,] GenerateMatrix(int rowLength, int colLength, int minRange, int maxRange)
     }
     return array;
 }
-void FindItem(int[,] inputMatrix, int rows, int colums)
+void FindItem(int[,] inputMatrix, int rows, int columns)
 {
-    if (rows-1 > inputMatrix.GetLongLength(0) | colums-1 > inputMatrix.GetLongLength(1))
+    if (rows-1 > inputMatrix.GetLongLength(0) | columns-1 > inputMatrix.GetLongLength(1))
     {
         System.Console.WriteLine("такого числа в массиве нет");
     }
     else
     {
-        System.Console.WriteLine($" искомое число: {inputMatrix[rows-1, colums-1]}");
+        System.Console.WriteLine($" искомое число: {inputMatrix[rows-1, columns-1]}");
     }
 }
 void PrintArray(int[,] array)
@@ -61,5 +61,5 @@ void PrintArray(int[,] array)
 int[,] newMatrix = GenerateMatrix(4, 5, -10, 10);
 PrintArray(newMatrix);
 int inputRows = Prompt("Введите строку искомого элемента > ");
-int inputColums = Prompt("Введите колоноку искомого элемента > ");
-FindItem(newMatrix, inputRows, inputColums);
+int inputColumns = Prompt("Введите колонку искомого элемента > ");
+FindItem(newMatrix, inputRows, inputColumns);

@@ -34,14 +34,14 @@ void PrintMatrix(int[,] array)
     System.Console.WriteLine();
 }
 
-int[] ReturnColum(int[,] insertMatrix, int columIndex)
+int[] ReturnColum(int[,] insertMatrix, int columnIndex)
 {
-    int[] colum = new int[insertMatrix.GetLength(0)];
+    int[] column = new int[insertMatrix.GetLength(0)];
     for (int i = 0; i < insertMatrix.GetLength(0); i++)
     {
-        colum[i] = insertMatrix[i, columIndex];
+        column[i] = insertMatrix[i, columnIndex];
     }
-    return colum;
+    return column;
 }
 double FindArithmeticMean(int[] inputArray)
 {
